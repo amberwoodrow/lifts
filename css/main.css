@@ -1,1 +1,49 @@
-/* add custom styles */
+body {
+  overflow: auto;
+}
+
+#date {
+  text-align: center;
+}
+
+#date:hover {
+  color: red;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
+/*input[type=button]:hover {
+  box-shadow: 0 3px green;
+}*/
+
+/*input[type=button]:active, input[type=button].pressed {
+  box-shadow: 0 2px green;
+  top: 5px;
+  position: relative;
+}
+
+input[type=button] {
+  font-size: 20px;
+  height: 50px;
+  width: 150px;
+  border: 0;
+  margin-top: 25px;
+  box-shadow: 0 6px green;
+  background-color: #69CE7B;
+  border-radius: 10px;
+  outline: none;
+}*/
+
+.button {
+  display: inline-block;
+  width: 180px;
+  height: 105px;
+
+}
+
+.btn-holder {
+  text-align: center;
+  margin-top: 30px;
+}

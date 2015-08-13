@@ -3,17 +3,95 @@
   <head>
     <meta charset="utf-8">
     <title>Untitled</title>
-    
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">LIFTS</a>
+        </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Progress charts</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <h1 id="date"></h1>
     
+    <section class="btn-holder">
+      <section class="button" id="pickExercise">
+        <!-- <button type="button" class="btn btn-default btn-lg">Pick workout</button> -->
+        <div class="dropdown">
+          <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Pick workout
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">list workout</a></li>
+            <li><a href="#">list workout</a></li>
+            <li><a href="#">list workout</a></li>
+            <li><a href="#">list workout</a></li>
+          </ul>
+        </div>
+        <!-- <input type="button" value="Pick exercise"> -->
+      </section>
+
+      <section class="button" id="addExercise">
+        <button type="button" class="btn btn-default btn-lg">Add workout</button>
+        <!-- <input type="button" value="Add exercise"> -->
+      </section>
+    </section>
+    <div id="btn-result-container">
+      <div>
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="exerciseName">Exercise</label>
+            <select class="form-control" id="exerciseName" placeholder="Squat">
+              <option value="one">One</option>
+              <option value="two">Two</option>
+              <option value="three">Three</option>
+              <option value="four">Four</option>
+              <option value="five">Five</option>
+            </select>
+          </div>
+<!--           <div class="form-group">
+            <label for="exerciseName">Exercise Name</label>
+            <input type="text" class="form-control" id="exerciseName" placeholder="Squat">
+          </div> -->
+          <div class="form-group">
+            <label for="reps">Reps</label>
+            <input type="text" class="form-control" id="reps" placeholder="#">
+          </div>
+          <div class="form-group">
+            <label for="weight">Weight</label>
+            <input type="text" class="form-control" id="weight" placeholder="#">lbs
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="addExercise">
+      <button type="submit" class="btn btn-default">Add exercise</button>
+    </div>
+    <div id="saveWorkout">
+      <button type="submit" class="btn btn-default">Save workout</button>
+    </div>
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/utility.js"></script>
+    <script type="text/javascript" src="js/dom.js"></script>
   </body>
 </html>
