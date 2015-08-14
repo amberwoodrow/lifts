@@ -7,86 +7,119 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-
+    <!-- Navigation -->
     <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">LIFTS</a>
-        </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Progress charts</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">LIFTS</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Calendar</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Progress charts</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <h1 id="date"></h1>
-    
-    <section class="btn-holder">
-      <section class="button" id="pickExercise">
-        <!-- <button type="button" class="btn btn-default btn-lg">Pick workout</button> -->
-        <div class="dropdown">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Pick workout
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">list workout</a></li>
-            <li><a href="#">list workout</a></li>
-            <li><a href="#">list workout</a></li>
-            <li><a href="#">list workout</a></li>
-          </ul>
-        </div>
-        <!-- <input type="button" value="Pick exercise"> -->
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Date Container -->
+      <div class="dateContainer">
+        <h1 id="date"></h1>
+      </div>
+
+      <!-- Holds 2 header huttons that pick exercise and create exercise -->
+      <section class="btnHolder">
+
+        <!-- Pick excercise dropdown -->
+        <section class="button" id="pickExercise">
+          <div class="dropdown">
+            <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownPickWorkout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Pick workout
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownPickWorkout">
+              <li><a href="#">list workout</a></li>
+              <li><a href="#">list workout</a></li>
+              <li><a href="#">list workout</a></li>
+              <li><a href="#">list workout</a></li>
+            </ul>
+          </div>
+        </section>
+        <!-- Create exercise button -->
+        <section class="button" id="addExercise">
+          <button type="button" class="btn btn-default btn-lg">Add workout</button>
+        </section>
       </section>
 
-      <section class="button" id="addExercise">
-        <button type="button" class="btn btn-default btn-lg">Add workout</button>
-        <!-- <input type="button" value="Add exercise"> -->
-      </section>
-    </section>
-    <div id="btn-result-container">
-      <div>
-        <form class="form-inline">
-          <div class="form-group">
-            <label for="exerciseName">Exercise</label>
-            <select class="form-control" id="exerciseName" placeholder="Squat">
-              <option value="one">One</option>
-              <option value="two">Two</option>
-              <option value="three">Three</option>
-              <option value="four">Four</option>
-              <option value="five">Five</option>
-            </select>
+      <!-- Results of the button that was pressed show up here -->
+      <div id="btn-result-container">
+        <h2>Tuesday's workout</h2>
+
+        <!-- Table -->
+        <table class='table table-striped'>
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Set</th>
+              <th>Reps</th>
+              <th>Weight</th> <!-- can be null -->
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableMain">
+          </tbody>
+        </table>
+
+        <!-- Adds a highlight style to everything contained in this div -->
+        <div class="highlight addFormDiv">
+
+          <!-- Adds to excercise -->
+          <div id="formAdd" class="formDisplay">
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="exerciseName">Exercise</label>
+                <select class="form-control" id="exerciseName" placeholder="Exercise">
+                  <option value="squat">Squat</option>
+                  <option value="deadlift">Deadlift</option>
+                  <option value="benchPress">Bench Press</option>
+                  <option value="overHeadPress">Over Head Press</option>
+                  <option value="row">Row</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sets">Sets</label>
+                <input type="text" class="form-control" id="sets" placeholder="# of sets">
+              </div>
+            </form>
           </div>
-<!--           <div class="form-group">
-            <label for="exerciseName">Exercise Name</label>
-            <input type="text" class="form-control" id="exerciseName" placeholder="Squat">
-          </div> -->
-          <div class="form-group">
-            <label for="reps">Reps</label>
-            <input type="text" class="form-control" id="reps" placeholder="#">
+
+          <!-- Button submits exercise to be added -->
+          <div id="addExercise">
+            <button type="button" class="btn btn-success" id="addExerciseBtn">
+              <span class="glyphicon glyphicon-plus">
+              </span>
+              Add exercise
+            </button>
           </div>
-          <div class="form-group">
-            <label for="weight">Weight</label>
-            <input type="text" class="form-control" id="weight" placeholder="#">lbs
+
+          <!-- Error message -->
+          <div class="alert alert-danger" role="alert" id="error">
           </div>
-        </form>
+        </div>
       </div>
-    </div>
-    <div id="addExercise">
-      <button type="submit" class="btn btn-default">Add exercise</button>
-    </div>
-    <div id="saveWorkout">
-      <button type="submit" class="btn btn-default">Save workout</button>
+
+      <!-- Button saves workout -->
+      <div id="saveWorkout">
+        <button type="submit" class="btn btn-default btn-lg">Save workout</button>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
