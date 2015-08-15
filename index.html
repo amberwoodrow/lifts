@@ -35,30 +35,6 @@
         <h1 id="date"></h1>
       </div>
 
-      <!-- Holds 2 header huttons that pick exercise and create exercise -->
-      <section class="btnHolder">
-
-        <!-- Pick excercise dropdown -->
-        <section class="button" id="pickExercise">
-          <div class="dropdown">
-            <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownPickWorkout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Pick workout
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownPickWorkout">
-              <li><a href="#">list workout</a></li>
-              <li><a href="#">list workout</a></li>
-              <li><a href="#">list workout</a></li>
-              <li><a href="#">list workout</a></li>
-            </ul>
-          </div>
-        </section>
-        <!-- Create exercise button -->
-        <section class="button" id="addExercise">
-          <button type="button" class="btn btn-default btn-lg">Add workout</button>
-        </section>
-      </section>
-
       <!-- Results of the button that was pressed show up here -->
       <div id="btn-result-container">
         <h2>Tuesday's workout</h2>
@@ -87,21 +63,21 @@
               <div class="form-group">
                 <label for="exerciseName">Exercise</label>
                 <select class="form-control" id="exerciseName" placeholder="Exercise">
-                  <option value="squat">Squat</option>
-                  <option value="deadlift">Deadlift</option>
-                  <option value="benchPress">Bench Press</option>
-                  <option value="overHeadPress">Over Head Press</option>
-                  <option value="row">Row</option>
+                  <option value="Squat">Squat</option>
+                  <option value="Deadlift">Deadlift</option>
+                  <option value="Bench Press">Bench Press</option>
+                  <option value="Over Head Press">Over Head Press</option>
+                  <option value="Row">Row</option>
                 </select>
               </div>
-              <div class="form-group">
+<!--               <div class="form-group">
                 <label for="reps">Reps</label>
                 <input type="text" class="form-control" id="reps" placeholder="# of reps">
               </div>
               <div class="form-group">
                 <label for="reps">Weight</label>
                 <input type="text" class="form-control" id="weight" placeholder="# weight">
-              </div>
+              </div> -->
             </form>
           </div>
 
@@ -130,5 +106,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/utility.js"></script>
     <script type="text/javascript" src="js/dom.js"></script>
+    <script type="text/javascript" src="js/models/workout.js"></script>
+    <script type="text/javascript" src="js/models/exercise.js"></script>
+    <script type="text/javascript" src="js/models/set.js"></script>
   </body>
 </html>
