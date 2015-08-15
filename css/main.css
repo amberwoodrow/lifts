@@ -44,9 +44,10 @@ body {
   font-size: 12px;
   line-height: 1.42;
   border-radius: 15px;
+  outline: none;
 }
 
-#remove, #plus {
+.remove, #plus {
   outline: none;
 }
 

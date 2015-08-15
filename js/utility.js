@@ -1,15 +1,24 @@
-var exerciseNameArr = [];
+var exerciseNameAndCount = {};
+var count = 1;
 
-// Make sure exercise is in array only once before adding to exerciseNameArr.
-function onlyOneExcersize(selected) {
-  if(exerciseNameArr.indexOf(selected) != -1) {
+// keeps count of sets by seeing if the exercise has been entered before
+function ifExistsAddToCount(selected) {
+  if(selected in exerciseNameAndCount) {
+    exerciseNameAndCount[selected] += 1;
+    console.log(exerciseNameAndCount[selected]);
     return false;
   }
   else {
-    exerciseNameArr.push(selected);
+    exerciseNameAndCount[selected] = 1;
+    console.log(exerciseNameAndCount[selected]);
     return true;
   }
 }
+
+// function 
+
+
+console.log(exerciseNameAndCount);
 
 // returns a date with full month name
 function dateToDisplay() {
@@ -20,3 +29,5 @@ function dateToDisplay() {
   var date = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
   return date;
 }
+
+// for num each exercise in arr is num sets

@@ -1,14 +1,12 @@
 $(document).on('ready', function() {
-  console.log('sanity check!');
+
   $('#date').html(dateToDisplay());
 
   $('#addExerciseBtn').click(function() {
     var exerciseSelectedVal = $('#exerciseName option:selected').val();
     var exerciseSelectedText = $('#exerciseName option:selected').text();
-    var numSets = $('#sets').val();
-    if (onlyOneExcersize(exerciseSelectedVal)) {
-      for (i=0; i<numSets; i++) {
-        count += 1;
+    ifExistsAddToCount(exerciseSelectedVal);
+    // if (onlyOneExcersize(exerciseSelectedVal)) {
       $('#tableMain').append(
         '<tr id="' + exerciseSelectedVal + '">' + 
           '<td class="exercise">' + 
@@ -30,17 +28,18 @@ $(document).on('ready', function() {
             '</button>' +
           '</td>' +
         '</tr>');
-      }
-    }
-    else {
-      flashMessage("<span class='glyphicon glyphicon-remove'></span> Already added " + exerciseSelectedText.toLowerCase(), "error");
-    }
+      count += 1;
+      // }
+    // else {
+    //   flashMessage("<span class='glyphicon glyphicon-remove'></span> Already added " + exerciseSelectedText.toLowerCase(), "error");
+    // }
   });
 
 
   $(document).on('click', '.remove', function() {
-    exerciseNameArr.splice(exerciseNameArr.indexOf($(this).parents('tr').attr('id')), 1);
+    exerciseNameAndCount.splice(exerciseNameAndCount.indexOf($(this).parents('tr').attr('id')), 1);
     $(this).parents('tr').remove();
+    count--;
     console.log(exerciseNameArr);
   });
 
