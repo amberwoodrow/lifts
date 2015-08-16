@@ -14,6 +14,11 @@ Workout.prototype.render = function() {
   var htmlOutput = "";
   for(var i=0; i<this.exercises.length; i++) {
     htmlOutput += this.exercises[i].render(i);
-  };
+  }
   this.$element.html(htmlOutput);
+};
+
+Workout.prototype.removeExercise = function(id) {
+  this.exercises.splice(id, 1);
+  this.render();
 };

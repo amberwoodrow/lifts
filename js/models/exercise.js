@@ -5,15 +5,9 @@ function Exercise(name) {
 
 Exercise.prototype.render = function(id) {
   var htmlOutput = "";
-  htmlOutput += "<tr><td>" + this.name + "</td><td></td><td></td><td></td><td></td></tr>";
+  htmlOutput += "<tr><td>" + this.name + "</td><td></td><td></td><td></td><td><button class='remove-exercise' data-exercise-id='" + id + "'>Remove</button></td></tr>";
   for (var i=0; i< this.sets.length; i++) {
-    htmlOutput += "<tr>" +
-    "<td></td>" +
-    "<td>" + (i + 1) + "</td>" +
-    "<td>" + this.sets[i].weight + "</td>" +
-    "<td>" + this.sets[i].reps + "</td>" +
-    "<td></td>" +
-    "</tr>";
+    htmlOutput += this.sets[i].render(i, id);
   }
 
   htmlOutput += "<tr>" +
@@ -21,11 +15,16 @@ Exercise.prototype.render = function(id) {
   "<td></td>" +
   "<td><input type='text' id='" + id + "-new-reps' placeholder='reps'></input></td>" +
   "<td><input type='text' id='" + id + "-new-weight' placeholder='weight'></input></td>" +
-  "<td><button class='new-set' data-exercise-id='" + id + "'>New Set</button></td></tr>";
+  "<td><button class='add-set' data-exercise-id='" + id + "'>Add Set</button></td></tr>";
   return htmlOutput;
 };
 
-Exercise.prototype.addSet = function(weight, set) {
-  this.sets.push(new Set(weight, set));
-  this.render();
+Exercise.prototype.addSet = function(weight, reps) {
+  this.sets.push(new Set(weight, reps));
+  workout.render();
+};
+
+Exercise.prototype.removeSet = function(id) {
+  this.sets.splice(id, 1);
+  workout.render();
 };
