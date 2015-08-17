@@ -20,10 +20,9 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Entries</a></li>
           <li><a href="#">Calendar</a></li>
-          <li><a href="#">Contact</a></li>
           <li><a href="#">Progress charts</a></li>
-          <li><a href="#">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -32,11 +31,15 @@
     <div class="container">
       <!-- Date Container -->
       <div class="dateContainer">
-        <h1 id="date"></h1>
+        <h1>
+          <span id="leftArrow">&lt; </span>
+          <span id="date"></span>
+          <span id="rightArrow"> &gt;</span>
+        </h1>
       </div>
 
       <!-- Results of the button that was pressed show up here -->
-      <div id="btn-result-container">
+      <div id="table-container">
         <h2>Tuesday's workout</h2>
 
         <!-- Table -->
@@ -70,14 +73,6 @@
                   <option value="Row">Row</option>
                 </select>
               </div>
-<!--               <div class="form-group">
-                <label for="reps">Reps</label>
-                <input type="text" class="form-control" id="reps" placeholder="# of reps">
-              </div>
-              <div class="form-group">
-                <label for="reps">Weight</label>
-                <input type="text" class="form-control" id="weight" placeholder="# weight">
-              </div> -->
             </form>
           </div>
 
@@ -97,18 +92,26 @@
       </div>
 
       <!-- Button saves workout -->
-      <div id="saveWorkout">
+<!--       <div id="saveWorkout">
         <button type="submit" class="btn btn-default btn-lg">Save workout</button>
+      </div> -->
+      <div id="chart-container">
+        
       </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/utility.js"></script>
+    <script type="text/javascript" src="js/models/user.js"></script>
     <script type="text/javascript" src="js/models/workout.js"></script>
     <script type="text/javascript" src="js/models/exercise.js"></script>
     <script type="text/javascript" src="js/models/set.js"></script>
     <script type="text/javascript" src="js/dom.js"></script>
-    
+    <!-- adds links for high charts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+
   </body>
 </html>

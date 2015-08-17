@@ -1,6 +1,5 @@
-function Workout(date, $element) {
+function Workout($element) {
   this.exercises = [];
-  this.date = dateToDisplay(date);
   this.$element = $element;
 }
 
